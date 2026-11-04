@@ -1,10 +1,10 @@
 
 import { test, expect } from '@playwright/test';
 
-test.describe('API-тесты для Restful-booker', () => {
+test.describe('@api API-тесты для Restful-booker', () => {
     const baseURL = 'https://restful-booker.herokuapp.com';
 
-    test ('Получение списка ID бронирований', async ({ request }) => {
+    test ('@api Получение списка ID бронирований', async ({ request }) => {
 
         // Отправляем GET-запрос
         const response = await request.get(`${baseURL}/booking`);
@@ -26,7 +26,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // п.1 Создание бронирования (Create - POST)
-    test ('Создание бронирования', async ({ request }) => {
+    test ('@api Создание бронирования', async ({ request }) => {
 
         // присваиваю константе данные
         const postData = {
@@ -66,7 +66,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // 2. Получение информации о бронировании (Read - GET)
-    test ('Получение информации о бронировании', async ({ request }) => {
+    test ('@api Получение информации о бронировании', async ({ request }) => {
        // ○	Данные в ответе (имя, фамилия и т.д.) соответствуют данным, созданным в первом тесте.
         const postData = {
               "firstname" : "Jim",
@@ -115,7 +115,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // 3. Обновление бронирования (Update - PUT)
-    test ('3. Обновление бронирования', async ({ request }) => {
+    test ('@api 3. Обновление бронирования', async ({ request }) => {
         const postData = {
               "firstname" : "Jim",
             "lastname" : "Brown",
@@ -195,7 +195,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // 4. Удаление бронирования (Delete - DELETE)
-    test ('4. Удаление бронирования', async ({ request }) => {
+    test ('@api 4. Удаление бронирования', async ({ request }) => {
         const postData = {
               "firstname" : "Jim",
             "lastname" : "Brown",
