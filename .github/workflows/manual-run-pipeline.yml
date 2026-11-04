@@ -18,12 +18,12 @@ jobs:
         node-version: '18.x' # Укажите вашу версию
 
 
-        # Шаг 3: Установка зависимостей.
+    
     - name: Install dependencies
       run: npm install
 
 
-        # Шаг 4: Установка браузеров Playwright.
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
@@ -38,8 +38,6 @@ jobs:
       run: npm run tests:api -- --reporter=html 
       env: 
         PLAYWRIGHT_HTML_REPORT: playwright-report-api
-
-
 
 
     - name: Upload UI test report 
